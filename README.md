@@ -18,6 +18,6 @@ npm install
 npm run dev
 ```
 
-## The idea behind the example
-
-[Next.js](https://github.com/zeit/next.js) is a framework for server-rendered React apps.
+## Fix issue
+- replace justify= by justifyContent=  (Grid component props renaming)
+- rename import { createMuiTheme } from "@material-ui/core/styles"; into import { createTheme } from "@material-ui/core/styles";
