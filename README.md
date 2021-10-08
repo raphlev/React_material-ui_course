@@ -32,3 +32,9 @@ npm run dev
  see https://aescripts.com/after-effects/
  see https://www.adobe.com/uk/products/aftereffects.html
 - use react-lottie package to import and use it
+
+## Theming
+- see material-ui doc on how use default theme and override it
+- component/ui/Theme.js contains custom theme (like learn button and estimatebutton) and extends default theme as well (like primary secondary colors) and this extended theme is used in different components of our app
+- apps links theme.js to the entire application using a provider hook
+- for example in LandingPage.js, '...theme.x.x' is used to spread values from default theme or from Theme.js where we added common styles for estimate or learn into the components
