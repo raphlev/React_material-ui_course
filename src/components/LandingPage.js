@@ -19,6 +19,7 @@ import websitesIcon from "../assets/websiteIcon.svg";
 import revolutionBackground from "../assets/repeatingBackground.svg";
 import infoBackground from "../assets/infoBackground.svg";
 
+// using ...theme.x.x below to spread values from default theme or from our Theme.js where we added common styles for estimate or learn button used in different components
 const useStyles = makeStyles(theme => ({
   animation: {
     maxWidth: "50em",
