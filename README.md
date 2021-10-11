@@ -34,9 +34,48 @@ npm run dev
 - use react-lottie package to import and use it
 - use "ruler" chrome extenstion to measure a selected html web page elements dimension (height, width)
 
-## Upgrade
+## Upgrade to mui V5
+https://mui.com/guides/migration-v4/#update-mui-version
+
 yarn upgrade --latest react react-dom react-lottie react-router-dom react-scripts axios lodash
 --> upgrade Oct2021: yarn upgrade axios, react, react-dom, react-scripts
+
+yarn add @mui/material @mui/styles @mui/icons-material
+--> add mui v5 components 
+    @material-ui/core -> @mui/material
+    @material-ui/styles -> @mui/styles
+    @material-ui/icons -> @mui/icons-material
+
+yarn add @emotion/react @emotion/styled
+--> add the new peer dependencies - emotion packages
+
+yarn remove @material-ui/core @material-ui/styles @material-ui/icons
+--> remove mui V4 component
+
+npx @mui/codemod v5.0.0/preset-safe
+--> update using most common transformer
+
+Check following imports after using codemod 
+- import { useTheme } from "@mui/material/styles"; 
+- import { makeStyles } from '@mui/styles';
+- import { ThemeProvider } from '@mui/material/styles';
+- import { StyledEngineProvider } from '@mui/material/styles';
+
+Check that main app is wrapped with StyledEngineProvider injectFirst
+- <StyledEngineProvider injectFirst>
+
+Check breakpoints
+The default breakpoints were changed to better match the common use cases. They also better match the Material Design guidelines. Read more about the change
+  {
+    xs: 0,
+    sm: 600,
+  - md: 960,
+  + md: 900,
+  - lg: 1280,
+  + lg: 1200,
+  - xl: 1920,
+  + xl: 1536,
+  }
 
 ## Theming
 - see material-ui doc on how use default theme and override it

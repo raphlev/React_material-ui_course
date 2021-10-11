@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
-import IconButton from "@material-ui/core/IconButton";
-import Typography from "@material-ui/core/Typography";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
-import Hidden from "@material-ui/core/Hidden";
+import { useTheme } from "@mui/material/styles";
+import { makeStyles } from '@mui/styles';
+import Grid from "@mui/material/Grid";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import Hidden from "@mui/material/Hidden";
 
 import backArrow from "../assets/backArrow.svg";
 import forwardArrow from "../assets/forwardArrow.svg";
@@ -26,7 +27,7 @@ const useStyles = makeStyles(theme => ({
   rowContainer: {
     paddingLeft: "5em",
     paddingRight: "5em",
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down('md')]: {
       paddingLeft: "1.5em",
       paddingRight: "1.5em"
     }
@@ -39,9 +40,9 @@ const useStyles = makeStyles(theme => ({
 export default function Websites(props) {
   const classes = useStyles();
   const theme = useTheme();
-  const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
-  const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
-  const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
+  const matchesMD = useMediaQuery(theme.breakpoints.down('lg'));
+  const matchesSM = useMediaQuery(theme.breakpoints.down('md'));
+  const matchesXS = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
     <Grid container direction="column">
@@ -53,7 +54,7 @@ export default function Websites(props) {
         className={classes.rowContainer}
         style={{ marginTop: matchesXS ? "1em" : "2em" }}
       >
-        <Hidden mdDown>
+        <Hidden lgDown>
           <Grid
             item
             className={classes.arrowContainer}
@@ -64,7 +65,7 @@ export default function Websites(props) {
               component={Link}
               to="/mobileapps"
               onClick={() => props.setSelectedIndex(2)}
-            >
+              size="large">
               <img
                 src={backArrow}
                 alt="Back to iOS/Android App Development Page"
@@ -99,14 +100,14 @@ export default function Websites(props) {
             </Typography>
           </Grid>
         </Grid>
-        <Hidden mdDown>
+        <Hidden lgDown>
           <Grid item className={classes.arrowContainer}>
             <IconButton
               style={{ backgroundColor: "transparent" }}
               component={Link}
               to="/services"
               onClick={() => props.setSelectedIndex(0)}
-            >
+              size="large">
               <img src={forwardArrow} alt="Forward to Services Page" />
             </IconButton>
           </Grid>

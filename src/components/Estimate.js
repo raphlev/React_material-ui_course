@@ -2,19 +2,21 @@ import React, { useState } from "react";
 import axios from "axios";
 import Lottie from "react-lottie";
 import { cloneDeep } from "lodash";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { useTheme } from "@mui/material/styles";
 
-import Grid from "@material-ui/core/Grid";
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
-import IconButton from "@material-ui/core/IconButton";
-import Dialog from "@material-ui/core/Dialog";
-import DialogContent from "@material-ui/core/DialogContent";
-import TextField from "@material-ui/core/TextField";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
-import Hidden from "@material-ui/core/Hidden";
-import Snackbar from "@material-ui/core/Snackbar";
-import CircularProgress from "@material-ui/core/CircularProgress";
+import { makeStyles } from '@mui/styles';
+
+import Grid from "@mui/material/Grid";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import IconButton from "@mui/material/IconButton";
+import Dialog from "@mui/material/Dialog";
+import DialogContent from "@mui/material/DialogContent";
+import TextField from "@mui/material/TextField";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import Hidden from "@mui/material/Hidden";
+import Snackbar from "@mui/material/Snackbar";
+import CircularProgress from "@mui/material/CircularProgress";
 
 import check from "../assets/check.svg";
 import send from "../assets/send.svg";
@@ -397,8 +399,8 @@ const websiteQuestions = [
 export default function Estimate() {
   const classes = useStyles();
   const theme = useTheme();
-  const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
-  const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
+  const matchesSM = useMediaQuery(theme.breakpoints.down('md'));
+  const matchesMD = useMediaQuery(theme.breakpoints.down('lg'));
 
   const [questions, setQuestions] = useState(defaultQuestions);
   const [dialogOpen, setDialogOpen] = useState(false);
@@ -962,10 +964,7 @@ export default function Estimate() {
           style={{ width: "18em", marginTop: "3em" }}
         >
           <Grid item>
-            <IconButton
-              disabled={backButtonDisabled()}
-              onClick={previousQuestion}
-            >
+            <IconButton disabled={backButtonDisabled()} onClick={previousQuestion} size="large">
               <img
                 src={backButtonDisabled() ? backArrowDisabled : backArrow}
                 alt="Previous question"
@@ -973,10 +972,7 @@ export default function Estimate() {
             </IconButton>
           </Grid>
           <Grid item>
-            <IconButton
-              disabled={forwardButtonDisabled()}
-              onClick={nextQuestion}
-            >
+            <IconButton disabled={forwardButtonDisabled()} onClick={nextQuestion} size="large">
               <img
                 src={
                   forwardButtonDisabled() ? forwardArrowDisabled : forwardArrow
@@ -1108,7 +1104,7 @@ export default function Estimate() {
               style={{ maxWidth: "30em" }}
               alignItems={matchesSM ? "center" : undefined}
             >
-              <Hidden smDown>
+              <Hidden mdDown>
                 <Grid item>
                   {questions.length > 2
                     ? softwareSelections

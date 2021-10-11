@@ -1,9 +1,10 @@
 import React from "react";
 import Lottie from "react-lottie";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { useTheme } from "@mui/material/styles";
+import { makeStyles } from '@mui/styles';
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 import vision from "../assets/vision.svg";
 import consultation from "../assets/consultationIcon.svg";
@@ -22,7 +23,7 @@ const useStyles = makeStyles(theme => ({
   rowContainer: {
     paddingLeft: "5em",
     paddingRight: "5em",
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down('md')]: {
       paddingLeft: "1.5em",
       paddingRight: "1.5em"
     }
@@ -32,8 +33,8 @@ const useStyles = makeStyles(theme => ({
 export default function Revolution(props) {
   const classes = useStyles();
   const theme = useTheme();
-  const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
-  const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
+  const matchesMD = useMediaQuery(theme.breakpoints.down('lg'));
+  const matchesSM = useMediaQuery(theme.breakpoints.down('md'));
 
   const defaultOptions = {
     loop: true,

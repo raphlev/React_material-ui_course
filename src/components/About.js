@@ -1,10 +1,11 @@
 import React from "react";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
-import Avatar from "@material-ui/core/Avatar";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
-import Hidden from "@material-ui/core/Hidden";
+import { useTheme } from "@mui/material/styles";
+import { makeStyles } from '@mui/styles';
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
+import Avatar from "@mui/material/Avatar";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import Hidden from "@mui/material/Hidden";
 
 import history from "../assets/history.svg";
 import profile from "../assets/founder.jpg";
@@ -24,7 +25,7 @@ const useStyles = makeStyles(theme => ({
   rowContainer: {
     paddingLeft: "5em",
     paddingRight: "5em",
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down('md')]: {
       paddingLeft: "1.5em",
       paddingRight: "1.5em"
     }
@@ -32,7 +33,7 @@ const useStyles = makeStyles(theme => ({
   avatar: {
     height: "25em",
     width: "25em",
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down('md')]: {
       height: "20em",
       width: "20em",
       maxHeight: 300,
@@ -44,7 +45,7 @@ const useStyles = makeStyles(theme => ({
 export default function About(props) {
   const classes = useStyles();
   const theme = useTheme();
-  const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
+  const matchesMD = useMediaQuery(theme.breakpoints.down('lg'));
 
   return (
     <Grid container direction="column">
@@ -223,7 +224,7 @@ export default function About(props) {
               </Typography>
             </Grid>
           </Grid>
-          <Hidden mdDown>
+          <Hidden lgDown>
             <Grid item lg style={{ maxWidth: "45em", padding: "1.25em" }}>
               <Typography variant="body1" align="center" paragraph>
                 I taught myself basic coding from a library book in third grade,

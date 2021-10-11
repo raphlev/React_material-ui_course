@@ -1,11 +1,12 @@
 import React from "react";
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
+import { useTheme } from "@mui/material/styles";
+import { makeStyles } from '@mui/styles';
 import { Link } from "react-router-dom";
-import Button from "@material-ui/core/Button";
+import Button from "@mui/material/Button";
 import ButtonArrow from "./ButtonArrow";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 import background from "../../assets/background.jpg";
 import mobileBackground from "../../assets/mobileBackground.jpg";
@@ -16,7 +17,7 @@ const useStyles = makeStyles(theme => ({
     fontSize: "0.7rem",
     height: 35,
     padding: 5,
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down('md')]: {
       marginBottom: "2em"
     }
   },
@@ -28,7 +29,7 @@ const useStyles = makeStyles(theme => ({
     backgroundRepeat: "no-repeat",
     height: "60em",
     width: "100%",
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down('lg')]: {
       backgroundImage: `url(${mobileBackground})`,
       backgroundAttachment: "inherit"
     }
@@ -45,7 +46,7 @@ const useStyles = makeStyles(theme => ({
     "&:hover": {
       backgroundColor: theme.palette.secondary.light
     },
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down('md')]: {
       marginLeft: 0,
       marginRight: 0
     }
@@ -55,7 +56,7 @@ const useStyles = makeStyles(theme => ({
 export default function CallToAction(props) {
   const classes = useStyles();
   const theme = useTheme();
-  const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
+  const matchesSM = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
     <Grid

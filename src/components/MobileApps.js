@@ -1,12 +1,13 @@
 import React from "react";
 import Lottie from "react-lottie";
 import { Link } from "react-router-dom";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
-import IconButton from "@material-ui/core/IconButton";
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
-import Hidden from "@material-ui/core/Hidden";
+import { useTheme } from "@mui/material/styles";
+import { makeStyles } from '@mui/styles';
+import IconButton from "@mui/material/IconButton";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import Hidden from "@mui/material/Hidden";
 
 import forwardArrow from "../assets/forwardArrow.svg";
 import backArrow from "../assets/backArrow.svg";
@@ -28,7 +29,7 @@ const useStyles = makeStyles(theme => ({
   rowContainer: {
     paddingLeft: "5em",
     paddingRight: "5em",
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down('md')]: {
       paddingLeft: "1.5em",
       paddingRight: "1.5em"
     }
@@ -38,9 +39,9 @@ const useStyles = makeStyles(theme => ({
 export default function MobileApps(props) {
   const classes = useStyles();
   const theme = useTheme();
-  const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
-  const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
-  const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
+  const matchesMD = useMediaQuery(theme.breakpoints.down('lg'));
+  const matchesSM = useMediaQuery(theme.breakpoints.down('md'));
+  const matchesXS = useMediaQuery(theme.breakpoints.down('sm'));
 
   const defaultOptions = {
     loop: true,
@@ -61,7 +62,7 @@ export default function MobileApps(props) {
         className={classes.rowContainer}
         style={{ marginTop: matchesXS ? "1em" : "2em" }}
       >
-        <Hidden mdDown>
+        <Hidden lgDown>
           <Grid
             item
             className={classes.arrowContainer}
@@ -72,7 +73,7 @@ export default function MobileApps(props) {
               component={Link}
               to="/customsoftware"
               onClick={() => props.setSelectedIndex(1)}
-            >
+              size="large">
               <img
                 src={backArrow}
                 alt="Back to Custom Software Development Page"
@@ -114,14 +115,14 @@ export default function MobileApps(props) {
             </Typography>
           </Grid>
         </Grid>
-        <Hidden mdDown>
+        <Hidden lgDown>
           <Grid item className={classes.arrowContainer}>
             <IconButton
               style={{ backgroundColor: "transparent" }}
               component={Link}
               to="/websites"
               onClick={() => props.setSelectedIndex(3)}
-            >
+              size="large">
               <img
                 src={forwardArrow}
                 alt="Forward to Website Development Page"

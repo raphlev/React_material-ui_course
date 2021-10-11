@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { useTheme } from "@mui/material/styles";
+import { makeStyles } from '@mui/styles';
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 import ButtonArrow from "./ui/ButtonArrow";
 import customSoftwareIcon from "../assets/Custom Software Icon.svg";
@@ -21,13 +22,13 @@ const useStyles = makeStyles(theme => ({
   },
   icon: {
     marginLeft: "2em",
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down('sm')]: {
       marginLeft: 0
     }
   },
   serviceContainer: {
     marginTop: "10em",
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down('md')]: {
       padding: 25
     }
   },
@@ -36,7 +37,7 @@ const useStyles = makeStyles(theme => ({
     fontSize: "0.7rem",
     height: 35,
     padding: 5,
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down('md')]: {
       marginBottom: "2em"
     }
   }
@@ -45,7 +46,7 @@ const useStyles = makeStyles(theme => ({
 export default function Services(props) {
   const classes = useStyles();
   const theme = useTheme();
-  const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
+  const matchesSM = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
     <Grid container direction="column">

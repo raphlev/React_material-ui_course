@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
-import Dialog from "@material-ui/core/Dialog";
-import DialogContent from "@material-ui/core/DialogContent";
-import CircularProgress from "@material-ui/core/CircularProgress";
-import Snackbar from "@material-ui/core/Snackbar";
+import { useTheme } from "@mui/material/styles";
+import { makeStyles } from '@mui/styles';
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import Dialog from "@mui/material/Dialog";
+import DialogContent from "@mui/material/DialogContent";
+import CircularProgress from "@mui/material/CircularProgress";
+import Snackbar from "@mui/material/Snackbar";
 
 import ButtonArrow from "./ui/ButtonArrow";
 
@@ -28,7 +29,7 @@ const useStyles = makeStyles(theme => ({
     backgroundRepeat: "no-repeat",
     height: "60em",
     paddingBottom: "10em",
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down('lg')]: {
       backgroundImage: `url(${mobileBackground})`
     }
   },
@@ -44,7 +45,7 @@ const useStyles = makeStyles(theme => ({
     "&:hover": {
       backgroundColor: theme.palette.secondary.light
     },
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down('lg')]: {
       marginLeft: 0,
       marginRight: 0
     }
@@ -54,7 +55,7 @@ const useStyles = makeStyles(theme => ({
     fontSize: "0.7rem",
     height: 35,
     padding: 5,
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down('lg')]: {
       marginBottom: "2em"
     }
   },
@@ -73,7 +74,7 @@ const useStyles = makeStyles(theme => ({
     "&:hover": {
       backgroundColor: theme.palette.secondary.light
     },
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down('md')]: {
       height: 40,
       width: 225
     }
@@ -83,9 +84,9 @@ const useStyles = makeStyles(theme => ({
 export default function Contact(props) {
   const classes = useStyles();
   const theme = useTheme();
-  const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
-  const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
-  const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
+  const matchesMD = useMediaQuery(theme.breakpoints.down('lg'));
+  const matchesSM = useMediaQuery(theme.breakpoints.down('md'));
+  const matchesXS = useMediaQuery(theme.breakpoints.down('sm'));
 
   const [name, setName] = useState("");
 

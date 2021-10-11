@@ -1,14 +1,15 @@
 import React from "react";
 import Lottie from "react-lottie";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { useTheme } from "@mui/material/styles";
+import { makeStyles } from '@mui/styles';
 import { Link } from "react-router-dom";
-import Grid from "@material-ui/core/Grid";
-import Button from "@material-ui/core/Button";
+import Grid from "@mui/material/Grid";
+import Button from "@mui/material/Button";
 import ButtonArrow from "../components/ui/ButtonArrow";
-import Typography from "@material-ui/core/Typography";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
-import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
+import Typography from "@mui/material/Typography";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
 
 import CallToAction from "./ui/CallToAction";
 
@@ -26,7 +27,7 @@ const useStyles = makeStyles(theme => ({
     minWidth: "21em",
     marginTop: "2em",
     marginLeft: "10%",
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down('md')]: {
       maxWidth: "30em"
     }
   },
@@ -55,23 +56,23 @@ const useStyles = makeStyles(theme => ({
     fontSize: "0.7rem",
     height: 35,
     padding: 5,
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down('md')]: {
       marginBottom: "2em"
     }
   },
   mainContainer: {
     marginTop: "5em",
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down('lg')]: {
       marginTop: "3em"
     },
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down('sm')]: {
       marginTop: "2em"
     }
   },
   heroTextContainer: {
     minWidth: "21.5em",
     marginLeft: "1em",
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down('sm')]: {
       marginLeft: 0
     }
   },
@@ -84,13 +85,13 @@ const useStyles = makeStyles(theme => ({
   },
   icon: {
     marginLeft: "2em",
-    [theme.breakpoints.down("xs")]: {
+    [theme.breakpoints.down('sm')]: {
       marginLeft: 0
     }
   },
   serviceContainer: {
     marginTop: "12em",
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down('md')]: {
       padding: 25
     }
   },
@@ -107,7 +108,7 @@ const useStyles = makeStyles(theme => ({
     boxShadow: theme.shadows[10],
     borderRadius: 15,
     padding: "10em",
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down('md')]: {
       paddingTop: "8em",
       paddingBottom: "8em",
       paddingLeft: 0,
@@ -129,8 +130,8 @@ const useStyles = makeStyles(theme => ({
 export default function LandingPage(props) {
   const classes = useStyles();
   const theme = useTheme();
-  const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
-  const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
+  const matchesSM = useMediaQuery(theme.breakpoints.down('md'));
+  const matchesXS = useMediaQuery(theme.breakpoints.down('sm'));
 
   const defaultOptions = {
     loop: true,
