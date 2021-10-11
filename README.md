@@ -32,6 +32,11 @@ npm run dev
  see https://aescripts.com/after-effects/
  see https://www.adobe.com/uk/products/aftereffects.html
 - use react-lottie package to import and use it
+- use "ruler" chrome extenstion to measure a selected html web page elements dimension (height, width)
+
+## Upgrade
+yarn upgrade --latest react react-dom react-lottie react-router-dom react-scripts axios lodash
+--> upgrade Oct2021: yarn upgrade axios, react, react-dom, react-scripts
 
 ## Theming
 - see material-ui doc on how use default theme and override it
