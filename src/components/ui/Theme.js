@@ -108,3 +108,6 @@ export default createTheme({
     }
   }
 });
+// overrides: see 110. Using TextFields Styling
+// https://www.udemy.com/course/implement-high-fidelity-designs-with-material-ui-and-reactjs/learn/lecture/16041126?start=435#overview
+// https://stackoverflow.com/questions/51958068/how-to-override-selected-color-in-theme-override-for-material-ui-for-react + https://codesandbox.io/s/mj9x1zy4j9?file=/demo.js:326-389
