@@ -82,3 +82,13 @@ The default breakpoints were changed to better match the common use cases. They 
 - component/ui/Theme.js contains custom theme (like learn button and estimatebutton) and extends default theme as well (like primary secondary colors) and this extended theme is used in different components of our app
 - apps links theme.js to the entire application using a provider hook
 - for example in LandingPage.js, '...theme.x.x' is used to spread values from default theme or from Theme.js where we added common styles for estimate or learn into the components
+
+## Mail Serverless function
+
+- In Contact.jsx page, use Nodemailer.js with firebase cloud function that provide URL to trigger serverless function. Simple node application that impements nodemailer.js
+  See video "Using Nodemailer" + "Sending the form values"
+
+## Lodash to avoid mutating arrays used for state
+
+- In Estimate.jsx page, use lodash library> cloneDeep function to clone an array object that is defined as component state
+  See video "Question Navigation"
