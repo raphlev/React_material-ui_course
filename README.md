@@ -38,3 +38,8 @@ npm run dev
 - component/ui/Theme.js contains custom theme (like learn button and estimatebutton) and extends default theme as well (like primary secondary colors) and this extended theme is used in different components of our app
 - apps links theme.js to the entire application using a provider hook
 - for example in LandingPage.js, '...theme.x.x' is used to spread values from default theme or from Theme.js where we added common styles for estimate or learn into the components
+
+## Back-end
+- Google Cloud Firebase Functions
+  . store node server app with nodemailer.js account to receive the emails from contact form
+  . receive the estimates ..
